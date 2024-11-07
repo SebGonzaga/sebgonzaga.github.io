@@ -8,51 +8,76 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: white;
-            position: relative;
-            transition: background-color 0.5s, color 0.5s;
-        }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    position: relative;
+    transition: background-color 0.5s, color 0.5s;
+    overflow: auto; /* Allow scrolling */
+}
 
-        .light-mode {
-            background-color: #ADD8E6; /* Light blue color */
-            color: black;
-        }
+.light-mode {
+    background-color: #ADD8E6; /* Light blue color */
+    color: black;
+}
 
-        .dark-mode {
-            background-color: #001F3F;
-            color: white;
-        }
+.dark-mode {
+    background-color: #001F3F;
+    color: white;
+}
 
-        .container {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            margin: 50px auto;
-            padding: 40px;
-            min-height: 800px;
-            max-height: 90vh; /* Added max-height for scrolling */
-            overflow-y: auto; /* Allow vertical scrolling */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            transition: background-color 0.5s;
-        }
+.profile-pic-container {
+    position: relative;
+    display: block;
+    margin-left: 140px; /* Pushes the container to the right */
+    margin-right: 0;
+  
+}
 
-        .profile-pic {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            border: 5px solid white;
-        }
+@media (min-width: 768px) {
+    .profile-pic-container {
+        top: 20px; /* Optional: Adjust these values for desktop mode */
+        left: 145px; /* No left offset for consistent right positioning */
+    }
+}
+
+.profile-pic {
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+    min-height: 1050px;
+    max-height: 90vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.5s;
+}
+
+body::-webkit-scrollbar {
+    display: none;  
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+       
 
         .section {
             margin-bottom: 20px;
@@ -69,6 +94,7 @@
         .left-section {
             flex: 1;
             text-align: left;
+
         }
 
         .right-section {
@@ -154,6 +180,7 @@
             width: 100%;
             text-align: left;
             transition: background-color 0.5s;
+           
         }
 
         .contact-info h2 {
@@ -229,10 +256,10 @@
             transform: translateX(26px);
         }
 
-        /* Responsive styles for mobile screens */
+
         @media (max-width: 768px) {
             .container {
-                padding: 20px; /* Reduced padding for mobile */
+                padding: 20px; 
             }
 
             .content-section {
@@ -295,7 +322,9 @@
 
         <div class="content-section">
             <div class="left-section">
+                <div class="profile-pic-container">
                 <img src="https://images.ctfassets.net/ub3bwfd53mwy/5WFv6lEUb1e6kWeP06CLXr/acd328417f24786af98b1750d90813de/4_Image.jpg?w=750" alt="Profile Picture" class="profile-pic">
+           
             </div>
             <div class="right-section">
                 <div class="nav-sections">
